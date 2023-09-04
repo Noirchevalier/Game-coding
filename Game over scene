@@ -1,0 +1,7 @@
+    void Die()
+    {
+        Debug.Log("Morreu");
+
+        // Load the "Game Over" scene when the player dies
+        SceneManager.LoadScene("GameOver"); // Replace "GameOver" with the actual name of your "Game Over" scene
+    }
