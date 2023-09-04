@@ -1,0 +1,45 @@
+[System.Serializable]
+public class InventoryItem
+{
+    public string itemName;
+    public int itemQuantity;
+    // Add more item properties here
+}
+
+public class InventorySystem : MonoBehaviour
+{
+    public List<InventoryItem> inventory = new List<InventoryItem>();
+}
+
+
+//////////////////////////////////////////////////////////////////
+
+
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+public class InventoryUI : MonoBehaviour
+{
+    public InventorySystem inventorySystem;
+    public TextMeshProUGUI textDisplay;
+
+    private void Update()
+    {
+        UpdateInventoryUI();
+    }
+
+    void UpdateInventoryUI()
+    {
+        // Clear the text
+        textDisplay.text = "";
+
+        // Loop through inventory items and add them to the text display
+        foreach (InventoryItem item in inventorySystem.inventory)
+        {
+            textDisplay.text += item.itemName + ": " + item.itemQuantity + "\n";
+        }
+    }
+}
