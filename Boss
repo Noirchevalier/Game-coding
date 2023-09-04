@@ -1,0 +1,45 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Boss : Enemy
+{
+    // Boss-specific properties
+    public int bossMaxHealth = 200;
+    public float bossAttackRange = 2f;
+    public int bossAttackDamage = 20;
+    public float bossPushForce = 15f;
+
+    // Add more boss-specific properties as needed
+
+    protected override void Start()
+    {
+        base.Start(); // Call the base class's Start() method
+
+        // Initialize boss-specific properties here
+        maxHealth = bossMaxHealth;
+        attackRange = bossAttackRange;
+        attackDamage = bossAttackDamage;
+        pushForce = bossPushForce;
+
+        // Additional initialization for the boss
+    }
+
+    protected override void Update()
+    {
+        base.Update(); // Call the base class's Update() method
+
+        // Implement boss-specific behavior here
+        // You can override or extend the Update() method as needed
+    }
+
+    protected override void Attack()
+    {
+        base.Attack(); // Call the base class's Attack() method
+
+        // Implement boss-specific attack logic here
+        // You can override or extend the Attack() method as needed
+    }
+
+    // Add more boss-specific methods and behavior as needed
+}
